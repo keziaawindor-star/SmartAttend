@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Login | SmartAttend</title>
+    <link rel="stylesheet" href="lecturer-login.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <main class="login-container">
+        <div class="login-card">
+
+            <a href="home.html" class="brand">
+                <span>Smart</span>Attend
+            </a>
+
+            <div class="heading">
+                <h1>Lecturer's Login</h1>
+                <p>Sign in to manage your courses and attendance sessions.</p>
+            </div>
+
+            <form id="lecturerLoginForm">
+
+                <div class="form-group">
+                    <label for="lecturerEmail">Email Address</label>
+                    <input
+                        type="email"
+                        id="lecturerEmail"
+                        placeholder="Enter your registered email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="lecturerPassword">Password</label>
+                    <input
+                        type="password"
+                        id="lecturerPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <p id="loginMessage" role="status" aria-live="polite"></p>
+
+                <button type="submit" class="login-btn">
+                    Log In
+                </button>
+
+            </form>
+
+            <div class="google-divider">
+    <span>OR</span>
+    </div>
+
+    <div id="lecturerGoogleButton"></div>
+
+    <p id="googleLoginMessage" role="status" aria-live="polite"></p>
+
+            <p class="register-text">
+                Don't have a lecturer account?
+                <a href="lecturer-register.html">Register here</a>
+            </p>
+
+            <p class="back-home">
+                <a href="home.html">← Back to homepage</a>
+            </p>
+
+        </div>
+    </main>
+
+    <script src="lecturer-login.js"></script>
+    <script src="lecturer-google-login.js"></script>
+</body>
+</html>

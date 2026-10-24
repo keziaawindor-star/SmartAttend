@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOG IN | SmartAttend</title>
+  <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+
+  <main class="login-page">
+
+        <!-- Left welcome section -->
+        <section class="login-welcome">
+            <div class="brand">
+    <span class="smart-text">Smart</span><span class="attend-text">Attend</span>
+</div>
+
+            <div class="welcome-content">
+                <span class="welcome-label">WELCOME BACK</span>
+                <h1>Attendance management, made smarter.</h1>
+                <p>
+                    Sign in to access your dashboard, manage attendance,
+                    and stay on top of your academic activities.
+                </p>
+
+                <div class="welcome-benefit">
+                    <span>✓</span>
+                    <p>Quick and convenient QR check-ins</p>
+                </div>
+
+                <div class="welcome-benefit">
+                    <span>✓</span>
+                    <p>Organised attendance records</p>
+                </div>
+
+                <div class="welcome-benefit">
+                    <span>✓</span>
+                    <p>Easy access to attendance insights</p>
+                </div>
+            </div>
+
+            <p class="welcome-footer">
+                Smart attendance. Better organisation.
+            </p>
+        </section>
+
+        <!-- Right login form -->
+        <section class="login-form-section">
+
+            <div class="login-card">
+
+                <div class="mobile-brand">
+                    <span class="smart-text">Smart</span><span class="attend-text">Attend</span>
+                </div>
+
+                <div class="form-heading">
+                    <h2>Welcome back!</h2>
+                    <p>Enter your details to access your account.</p>
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-option">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#" id="forgotPassword">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Log In <span>→</span>
+                    </button>
+
+                    <p id="loginMessage" class="login-message" aria-live="polite"></p>
+        <div id="g_id_onload"
+            data-client_id="92175470588-a528h5vkc0c49c031oado66n2vkcqv8k.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-callback="handleGoogleSignIn"
+            data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left">
+        </div>
+                </form>
+
+                <div class="login-divider">
+                    <span>SECURE ACCESS</span>
+                </div>
+
+                <p class="signup-text">
+                    New to SmartAttend?
+                    <a href="register.html">Create an account</a>
+                </p>
+
+                <a href="home.html" class="back-home">
+                    ← Back to homepage
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="login.js"></script>
+
+    
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="google-login.js"></script>
+
+</body>
+</html>

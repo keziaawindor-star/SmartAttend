@@ -1,0 +1,512 @@
+:root {
+    --navy: #101c35;
+    --teal: #2dd4bf;
+    --dark-teal: #0d9488;
+    --background: #f3f6fa;
+    --white: #ffffff;
+    --text: #25334b;
+    --muted: #78859a;
+    --border: #e4eaf2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.topbar {
+    background: var(--navy);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.smart-text {
+    color: rgb(27, 83, 168);
+}
+
+.attend-text {
+    color: rgb(87, 206, 136);
+}
+
+.topbar nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.topbar nav a {
+    color: #e1e8f2;
+    text-decoration: none;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+    background: var(--dark-teal);
+    color: white;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: var(--dark-teal);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 9px;
+}
+
+.page-heading h1 {
+    color: var(--navy);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.page-heading > p:last-child,
+.panel-heading > p:last-child {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.summary-card,
+.panel {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 23px;
+    box-shadow: 0 4px 16px rgba(16, 28, 53, 0.035);
+}
+
+.summary-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #d5faf4;
+    color: var(--dark-teal);
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.summary-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.summary-card h2 {
+    color: var(--navy);
+    font-size: 28px;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.panel-heading {
+    margin-bottom: 23px;
+}
+
+.panel-heading h2,
+.courses-heading h2 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9e1eb;
+    border-radius: 8px;
+    background: white;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--dark-teal);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 13px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--navy);
+    color: white;
+    border: 1px solid var(--navy);
+}
+
+.primary-button:hover {
+    background: var(--dark-teal);
+    border-color: var(--dark-teal);
+}
+
+.secondary-button {
+    background: white;
+    color: var(--navy);
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+    border-color: var(--dark-teal);
+}
+
+.message {
+    margin-top: 13px;
+    color: var(--dark-teal);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.upload-area {
+    min-height: 220px;
+    border: 2px dashed #b8d8d5;
+    background: #f5fdfb;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-area:hover {
+    border-color: var(--dark-teal);
+    background: #ecfdf9;
+}
+
+.upload-icon {
+    font-size: 35px;
+    color: var(--dark-teal);
+}
+
+.upload-area strong {
+    color: var(--navy);
+}
+
+.upload-area span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.upload-area .upload-browse {
+    background: var(--dark-teal);
+    color: white;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#timetableFile {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.file-preview {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.file-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 420px;
+    margin: 12px auto 0;
+    border-radius: 6px;
+}
+
+.file-preview iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    margin-top: 12px;
+}
+
+.file-preview button {
+    margin-top: 12px;
+}
+
+.notice {
+    margin-top: 20px;
+    background: #f0fdfa;
+    border-left: 4px solid var(--dark-teal);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.notice strong {
+    display: block;
+    color: var(--navy);
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.notice p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.courses-panel {
+    margin-bottom: 25px;
+}
+
+.courses-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.saved-label {
+    color: var(--dark-teal);
+    background: #e5faf6;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.course-list {
+    display: grid;
+    gap: 13px;
+}
+
+.course-item {
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.course-details {
+    min-width: 0;
+}
+
+.course-details h3 {
+    color: var(--navy);
+    font-size: 16px;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.course-code {
+    color: var(--dark-teal);
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.course-details p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.course-actions button {
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--navy);
+    font-size: 12px;
+}
+
+.course-actions .delete-button {
+    color: #c62828;
+}
+
+.course-actions button:hover {
+    border-color: var(--dark-teal);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 35px 15px;
+    border: 1px dashed #cbd6e4;
+    border-radius: 10px;
+}
+
+.empty-icon {
+    display: block;
+    color: var(--dark-teal);
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.empty-state h3 {
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 11px;
+    padding: 10px 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 850px) {
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 18px;
+    }
+
+    .topbar nav {
+        width: 100%;
+    }
+
+    .topbar nav a {
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .page-container {
+        padding: 25px 15px;
+    }
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .summary-card,
+    .panel {
+        padding: 17px;
+    }
+
+    .time-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .course-item {
+        flex-direction: column;
+    }
+
+    .course-actions {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}

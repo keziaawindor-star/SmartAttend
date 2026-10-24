@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUDENT ATTENDANCE TRACKER</title>
+  <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="tracker logo.png" >
+    </div>
+    <div class = "navbar">
+
+    </div>
+    <ul class="nav-links">
+        <li><a href="login.html" class="login-link">LOG IN</a></li>
+        <li><a href="student dashboard.html">STUDENT</a></li>
+        <li><a href="lecturer-login.html">LECTURER</a>
+        <li><a href="admin-login.html">ADMINISTRATOR</a></li>
+        <li><a href="my-courses.html">COURSES</a></li>
+    </ul>
+</nav>
+
+
+
+<section class="dashboard">
+<br><br><br>
+    <h1>
+      Dashboard Overview
+    </h1>
+<br><br>
+    <p>
+      Welcome back! Here is your attendance summary.
+    </p>
+<br><br>
+    <div class="cards-container">
+
+        <!-- Registered Students Card -->
+        <div class="card students-card">
+
+            <div class="card-icon">👥</div>
+
+            <h3>
+              Registered Students
+            </h3>
+
+            <h2 id="studentsCount">248</h2>
+
+            <p>
+              Total registered students
+            </p>
+        </div>
+
+        <!-- Attendance Rate Card -->
+        <div class="card attendance-card">
+
+            <div class="card-icon">📊</div>
+
+            <h3>
+              Attendance Rate
+            </h3>
+
+            <h2 id="attendanceRate">92%</h2>
+
+            <p>
+              Overall attendance rate
+            </p>
+
+        </div>
+
+        <!-- QR Check-in Card -->
+        <div class="card qr-card">
+
+            <div class="card-icon">📷</div>
+
+            <h3>
+              QR Check-in
+            </h3>
+
+            <p>
+              Scan a QR code to record attendance.
+            </p>
+
+            <button id="qrButton">
+              Start Check-in
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="features-heading">
+        <span class="section-label">Discover SmartAttend</span>
+        <h2>Everything you need, in one place.</h2>
+        <p>
+            Discover smarter ways to manage attendance,
+            track progress, and stay organised.
+        </p>
+    </div>
+
+    <div class="feature-showcase" id="featureShowcase">
+
+        <div class="feature-icon" id="featureIcon">📷</div>
+
+        <span class="feature-tag" id="featureTag">
+            FAST & SIMPLE
+        </span>
+
+        <h3 id="featureTitle">Instant QR Check-in</h3>
+
+        <p id="featureDescription">
+            Scan a session QR code to record attendance
+            quickly and conveniently.
+        </p>
+
+        <div class="feature-controls">
+            <button id="prevFeature" type="button">
+                ← Previous
+            </button>
+
+            <div class="feature-dots" id="featureDots">
+                <button class="feature-dot active"
+                    aria-label="Show feature 1"></button>
+                <button class="feature-dot"
+                    aria-label="Show feature 2"></button>
+                <button class="feature-dot"
+                    aria-label="Show feature 3"></button>
+                <button class="feature-dot"
+                    aria-label="Show feature 4"></button>
+            </div>
+
+            <button id="nextFeature" type="button">
+                Next →
+            </button>
+        </div>
+    </div>
+
+    <div class="feature-benefits">
+        <article class="benefit-card">
+            <span>⚡</span>
+            <h3>Fast Check-in</h3>
+            <p>Record attendance without paper registers.</p>
+        </article>
+
+        <article class="benefit-card">
+            <span>📊</span>
+            <h3>Useful Insights</h3>
+            <p>Understand attendance patterns and trends.</p>
+        </article>
+
+        <article class="benefit-card">
+            <span>🔒</span>
+            <h3>Secure Records</h3>
+            <p>Keep attendance records protected and organised.</p>
+        </article>
+    </div>
+</section>
+
+<!-- HOW SMARTATTEND WORKS -->
+<section class="how-it-works">
+    <div class="how-heading">
+        <span class="section-label">SIMPLE. SMART. EFFICIENT.</span>
+        <h2>How <span class="smart-text">Smart</span><span class="attend-text">Attend</span> Works</h2>
+        <p>Three simple steps to make attendance easier for everyone.</p>
+    </div>
+
+    <div class="steps-container">
+        <article class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-icon">📱</div>
+            <h3>Open Your Session</h3>
+            <p>Access your class attendance session through SmartAttend.</p>
+        </article>
+
+        <article class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-icon">▦</div>
+            <h3>Scan the QR Code</h3>
+            <p>Scan the session QR code to submit your attendance quickly.</p>
+        </article>
+
+        <article class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-icon">✓</div>
+            <h3>You're Checked In!</h3>
+            <p>Your attendance can be recorded and viewed in your records.</p>
+        </article>
+    </div>
+
+    <div class="steps-note">
+        <span>💡</span>
+        <p><strong>Less paperwork, more productivity.</strong> SmartAttend helps make attendance management simpler.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="how-it-works">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>
+                <span class="smart-text">Smart</span><span class="attend-text">Attend</span>
+            </h2>
+            <p>Smarter attendance. Better organisation.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="home.html">Home</a>
+            <a href="#featureShowcase">Features</a>
+            <a href="#how-it-works">How It Works</a>
+        </div>
+
+        <div class="footer-account">
+            <h3>Your Account</h3>
+            <a href="login.html">Log In</a>
+            <a href="login.html">Get Started</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 SmartAttend. All rights reserved.</p>
+        <p>Making attendance smarter, one scan at a time.</p>
+    </div>
+</footer>
+
+</section>
+
+    <script src="home.js"></script>
+</body>
+</html>

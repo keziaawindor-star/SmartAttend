@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Courses | SmartAttend</title>
+  <link rel ="stylesheet" href =" my-courses.css">
+</head>
+<body>
+  <header class="topbar">
+        <a href="student dashboard.html" class="brand">
+            <span class="smart-text">Smart</span><span class="attend-text">Attend</span>
+        </a>
+
+        <nav>
+            <a href="student dashboard.html">Dashboard</a>
+            <a href="my-courses.html" class="active">My Courses</a>
+            <a href="login.html">Log Out</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <p class="eyebrow">STUDENT PORTAL</p>
+            <h1>My Courses</h1>
+            <p>Add your courses or upload your timetable to organise your classes.</p>
+        </section>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <span class="summary-icon">▤</span>
+                <p>Total Courses</p>
+                <h2 id="courseCount">0</h2>
+            </article>
+
+            <article class="summary-card">
+                <span class="summary-icon">◷</span>
+                <p>Scheduled Classes</p>
+                <h2 id="scheduledCount">0</h2>
+            </article>
+        </section>
+
+        <section class="workspace">
+            <div class="panel">
+                <div class="panel-heading">
+                    <p class="eyebrow">OPTION 1</p>
+                    <h2 id="formTitle">Add a Course</h2>
+                    <p>Enter the details of a course on your timetable.</p>
+                </div>
+
+                <form id="courseForm">
+                    <input type="hidden" id="courseId">
+
+                    <div class="form-group">
+                        <label for="courseName">Course name *</label>
+                        <input type="text" id="courseName"
+                               placeholder="e.g. Programming Fundamentals" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseCode">Course code</label>
+                        <input type="text" id="courseCode"
+                               placeholder="e.g. BIT 101">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lecturer">Lecturer's name</label>
+                        <input type="text" id="lecturer"
+                               placeholder="Enter lecturer's name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseDay">Day *</label>
+                        <select id="courseDay" required>
+                            <option value="">Select a day</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                            <option>Sunday</option>
+                        </select>
+                    </div>
+
+                    <div class="time-grid">
+                        <div class="form-group">
+                            <label for="startTime">Start time *</label>
+                            <input type="time" id="startTime" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endTime">End time *</label>
+                            <input type="time" id="endTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="venue">Classroom / Venue</label>
+                        <input type="text" id="venue"
+                               placeholder="e.g. Block A, Room 101">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reminder">Reminder preference</label>
+                        <select id="reminder">
+                            <option value="5">5 minutes before class</option>
+                            <option value="15" selected>15 minutes before class</option>
+                            <option value="30">30 minutes before class</option>
+                            <option value="60">1 hour before class</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="primary-button" id="saveButton">
+                            Save Course
+                        </button>
+                        <button type="button" class="secondary-button"
+                                id="cancelEdit" hidden>
+                            Cancel Edit
+                        </button>
+                    </div>
+
+                    <p id="formMessage" class="message" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="panel upload-panel">
+                <div class="panel-heading">
+                    <p class="eyebrow">OPTION 2</p>
+                    <h2>Upload Your Timetable</h2>
+                    <p>Select a timetable from your device for reference.</p>
+                </div>
+
+                <label for="timetableFile" class="upload-area">
+                    <span class="upload-icon">⇧</span>
+                    <strong>Choose your timetable</strong>
+                    <span>PDF, PNG, JPG or JPEG</span>
+                    <span class="upload-browse">Browse Files</span>
+                </label>
+
+                <input type="file" id="timetableFile"
+                       accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg">
+
+                <p id="fileMessage" class="message" aria-live="polite">
+                    No timetable selected yet.
+                </p>
+
+                <div id="filePreview" class="file-preview" hidden></div>
+
+                <div class="notice">
+                    <strong>Please note</strong>
+                    <p>This prototype lets you select and preview a timetable. It does not automatically read course details from the file yet. Enter the courses in the form to add them to your schedule.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel courses-panel">
+            <div class="courses-heading">
+                <div>
+                    <p class="eyebrow">YOUR SCHEDULE</p>
+                    <h2>Saved Courses</h2>
+                </div>
+                <span id="savedLabel" class="saved-label">0 courses</span>
+            </div>
+
+            <div id="courseList" class="course-list"></div>
+
+            <div id="emptyState" class="empty-state">
+                <span class="empty-icon">▤</span>
+                <h3>No courses added yet</h3>
+                <p>Use the form above to add your first course.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 SmartAttend. All rights reserved.</p>
+            <p>Smarter Attendance. Brighter Future.</p>
+        </footer>
+    </main>
+
+    <script src="my-courses.js"></script>
+</body>
+</html>

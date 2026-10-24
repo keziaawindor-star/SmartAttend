@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Dashboard | SmartAttend</title>
+    <link rel="stylesheet" href="lecturer dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="home.html" class="brand">
+            <span>Smart</span>Attend
+        </a>
+
+        <p class="sidebar-label">LECTURER's MENU</p>
+
+        <nav class="sidebar-nav">
+            <a href="#overview" class="nav-link active">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#courses" class="nav-link">
+                <i data-lucide="book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="#sessions" class="nav-link">
+                <i data-lucide="qr-code"></i>
+                <span>Attendance Sessions</span>
+            </a>
+
+            <a href="#attendance" class="nav-link">
+                <i data-lucide="users"></i>
+                <span>Student Attendance</span>
+            </a>
+
+            <a href="#reports" class="nav-link">
+                <i data-lucide="chart-no-axes-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#profile" class="nav-link">
+                <i data-lucide="user-round"></i>
+                <span>My Profile</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>SmartAttend Lecturer Portal</p>
+            <button id="logoutButton" class="logout-button">
+                <i data-lucide="log-out"></i>
+                <span>Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button id="menuButton" class="menu-button" aria-label="Open menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="dashboard-heading">
+                <p class="topbar-label">LECTURER'S PORTAL</p>
+                <h2>My Dashboard</h2>
+       </div>
+
+            <div class="lecturer-mini-profile">
+                <div class="avatar">
+                    <i data-lucide="user-round"></i>
+                </div>
+                <div>
+                    <strong id="headerLecturerName">Lecturer</strong>
+                    <p>Lecturer</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="page-section" id="overview">
+            <div class="welcome-section">
+                <div>
+                    <p class="eyebrow">YOUR TEACHING SPACE</p>
+                    <h1>Welcome, <span id="welcomeLecturerName">Lecturer</span>!</h1>
+                    <p>Manage your courses and make attendance easier.</p>
+                </div>
+                <button class="primary-button" id="createSessionShortcut">
+                    <i data-lucide="plus"></i>
+                    Create Session
+                </button>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-icon teal">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <p>My Courses</p>
+                    <h2 id="courseCount">0</h2>
+                    <span>Courses in your list</span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon blue">
+                        <i data-lucide="calendar-check"></i>
+                    </div>
+                    <p>Sessions Created</p>
+                    <h2 id="sessionCount">0</h2>
+                    <span>Attendance sessions</span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon purple">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <p>Attendance Records</p>
+                    <h2 id="attendanceCount">0</h2>
+                    <span>Test records saved</span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon gold">
+                        <i data-lucide="chart-no-axes-column"></i>
+                    </div>
+                    <p>Attendance Rate</p>
+                    <h2 id="attendanceRate">—</h2>
+                    <span>Based on recorded attendance</span>
+                </article>
+            </div>
+
+            
+        </section>
+
+        <section class="page-section content-card" id="courses">
+            <div class="section-heading">
+                <div>
+                    <h2>My Courses</h2>
+                    <p>Manage the courses you teach.</p>
+                </div>
+                <button class="primary-button" id="addCourseButton">
+                    <i data-lucide="plus"></i>
+                    Add Course
+                </button>
+            </div>
+
+            <form id="courseForm" class="inline-form hidden">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="courseCode">Course Code</label>
+                        <input id="courseCode" required placeholder="e.g. BIT 201">
+                    </div>
+                    <div class="form-group">
+                        <label for="courseTitle">Course Title</label>
+                        <input id="courseTitle" required placeholder="e.g. Web Technology">
+                    </div>
+                    <div class="form-group">
+                        <label for="courseLevel">Level</label>
+                        <select id="courseLevel" required>
+                            <option value="">Select level</option>
+                            <option>FRESHMEN</option>
+                            <option>SOPHOMORES</option>
+                            <option>JUNIORS</option>
+                            <option>SENIORS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">Save Course</button>
+                    <button type="button" id="cancelCourseButton" class="secondary-button">Cancel</button>
+                </div>
+            </form>
+
+            <div id="courseList" class="course-list">
+                <div class="empty-state">
+                    <i data-lucide="book-open"></i>
+                    <h3>No courses added yet</h3>
+                    <p>Choose “Add Course” to add your first course.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section content-card" id="sessions">
+            <div class="section-heading">
+                <div>
+                    <h2>Attendance Sessions</h2>
+                    <p>Create a session for students to check in.</p>
+                </div>
+                <button class="primary-button" id="openSessionForm">
+                    <i data-lucide="plus"></i>
+                    New Session
+                </button>
+            </div>
+
+            <form id="sessionForm" class="inline-form hidden">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sessionCourse">Choose Course</label>
+                        <select id="sessionCourse" required>
+                            <option value="">Add a course first</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionDate">Session Date</label>
+                        <input type="date" id="sessionDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionDuration">Duration</label>
+                        <select id="sessionDuration" required>
+                            <option value="5">5 minutes</option>
+                            <option value="10" selected>10 minutes</option>
+                            <option value="15">15 minutes</option>
+                            <option value="30">30 minutes</option>
+                            <option value="60">60 minutes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">Create Session</button>
+                    <button type="button" id="cancelSessionButton" class="secondary-button">Cancel</button>
+                </div>
+            </form>
+
+            <div id="sessionList" class="session-list">
+                <div class="empty-state">
+                    <i data-lucide="qr-code"></i>
+                    <h3>No sessions created</h3>
+                    <p>Create a course and then start an attendance session.</p>
+                </div>
+            </div>
+
+            <div id="qrDisplay" class="qr-display hidden"></div>
+        </section>
+
+        <section class="page-section content-card" id="attendance">
+            <div class="section-heading">
+                <div>
+                    <h2>Student Attendance</h2>
+                    <p>Review check-in records for your sessions.</p>
+                </div>
+            </div>
+            <div id="attendanceList" class="table-wrapper">
+                <p class="muted-text">Attendance records will appear here as we build the check-in feature.</p>
+            </div>
+        </section>
+
+        <section class="page-section content-card" id="reports">
+            <div class="section-heading">
+                <div>
+                    <h2>Attendance Reports</h2>
+                    <p>Review and export your attendance data in a later step.</p>
+                </div>
+            </div>
+            <div id="reportSummary" class="report-summary">
+                <p class="muted-text">Reports will be available after attendance records are added.</p>
+            </div>
+        </section>
+
+        <section class="page-section content-card" id="profile">
+            <div class="section-heading">
+                <div>
+                    <h2>My Profile</h2>
+                    <p>Your lecturer account details.</p>
+                </div>
+            </div>
+
+            <div class="profile-details">
+                <div class="profile-avatar">
+                    <i data-lucide="user-round"></i>
+                </div>
+                <div>
+                    <h3 id="profileLecturerName">Lecturer Name</h3>
+                    <p id="profileLecturerEmail">lecturer@example.com</p>
+                    <p id="profileLecturerStaffId">Staff ID: —</p>
+                    <p id="profileLecturerDepartment">Department: —</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 SmartAttend. Smarter attendance, better organisation.</p>
+        </footer>
+
+    </main>
+</div>
+
+<script src="lecturer dashboard.js"></script>
+</body>
+</html>

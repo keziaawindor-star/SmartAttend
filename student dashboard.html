@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student dashboard | SmartAttend</title>
+  <link rel = "stylesheet" href = "student dashboard.css">
+</head>
+<body>
+  <aside class="sidebar">
+        <a href="home.html" class="brand">
+            <span class="smart-text">Smart</span><span class="attend-text">Attend</span>
+        </a>
+
+        <nav class="sidebar-nav">
+            <a href="#student dashboard" class="nav-link active">⌂ Dashboard</a>
+            <a href="#attendance" class="nav-link">▣ My Attendance</a>
+            <a href="my-courses.html" class="nav-link">▤ My Courses</a>
+            <a href="#profile" class="nav-link">♙ My Profile</a>
+        </nav>
+
+        <a href="login.html" class="logout-link">↪ Log Out</a>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">STUDENT PORTAL</p>
+                <h1>My Dashboard</h1>
+            </div>
+           <div class="student-badge" id="dashboardAvatar">
+    <span class="default-avatar">
+        <i data-lucide="user-round"></i>
+    </span>
+</div>
+        </header>
+
+        <section class="welcome-section">
+            <p class="eyebrow">WELCOME BACK!</p>
+            <h2 id="studentWelcome">Hello, Student 👋</h2>
+            <p>Keep track of your classes and stay on top of your attendance.</p>
+        </section>
+
+        <section class="stats-grid" id="attendance">
+            <article class="stat-card">
+                <span class="stat-icon teal">▣</span>
+                <p>Total Classes</p>
+                <h3 id="totalClasses">0</h3>
+                <small>Classes recorded</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon green">✓</span>
+                <p>Classes Attended</p>
+                <h3 id="classesAttended">0</h3>
+                <small>Attendance confirmed</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon red">×</span>
+                <p>Classes Missed</p>
+                <h3 id="classesMissed">0</h3>
+                <small>Absences recorded</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon blue">%</span>
+                <p>Attendance Rate</p>
+                <h3 id="attendanceRate">0%</h3>
+                <small>Your overall attendance</small>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel" id="classes">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">YOUR LEARNING</p>
+                        <h2>My Classes</h2>
+                    </div>
+                </div>
+
+                <div class="empty-state">
+                    <div class="empty-icon">▤</div>
+                    <h3>No classes added yet</h3>
+                    <p>Your courses and class schedules will appear here once they are added.</p>
+                </div>
+            </article>
+
+            <article class="panel quick-panel">
+                <p class="eyebrow">QUICK ACCESS</p>
+                <h2>Quick Actions</h2>
+
+                <a href="#scan" class="action-link">
+                    <span>▦</span>
+                    <div>
+                        <strong>Scan Attendance QR</strong>
+                        <small>Mark your attendance</small>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="#attendance" class="action-link">
+                    <span>▣</span>
+                    <div>
+                        <strong>View Attendance</strong>
+                        <small>Check your records</small>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="#profile" class="action-link">
+                    <span>♙</span>
+                    <div>
+                        <strong>My Profile</strong>
+                        <small>View your details</small>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+            </article>
+        </section>
+
+        <section class="panel profile-panel" id="profile">
+    <div class="profile-title-row">
+        <div>
+            <p class="eyebrow">ACCOUNT INFORMATION</p>
+            <h2>My Student Profile</h2>
+            <p class="profile-intro">
+                View and manage your personal and academic details.
+            </p>
+        </div>
+        <button type="button" id="editProfileButton" class="profile-edit-btn">
+            Edit Profile
+        </button>
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-avatar" id="profileAvatar">S</div>
+
+<label for="profilePicture" class="picture-upload-label">
+    Upload a profile picture
+</label>
+<input
+    type="file"
+    id="profilePicture"
+    accept="image/jpeg,image/png,image/webp"
+    hidden
+>
+
+<button type="button" id="removeProfilePicture" class="remove-picture-btn">
+    Remove picture
+</button>
+
+<p class="picture-help">
+    JPG, PNG or WebP. Maximum size: 1 MB.
+</p>
+        </div>
+
+        <form id="profileForm" class="profile-form">
+            <div class="profile-fields">
+                <div class="profile-field">
+                    <label for="profileName">Full name</label>
+                    <input type="text" id="profileName" required disabled>
+                </div>
+
+                <div class="profile-field">
+                    <label for="profileStudentId">Student ID</label>
+                    <input type="text" id="profileStudentId" disabled>
+                </div>
+
+                <div class="profile-field">
+                    <label for="profileEmail">Email address</label>
+                    <input type="email" id="profileEmail" required disabled>
+                </div>
+
+                <div class="profile-field">
+                    <label for="profileDepartment">Department / Programme</label>
+                    <input type="text" id="profileDepartment" required disabled>
+                </div>
+
+                <div class="profile-field">
+                    <label for="profileLevel">Academic level</label>
+                    <select id="profileLevel" required disabled>
+                        <option value="">Select your level</option>
+                        <option value="100">Freshman (100)</option>
+                        <option value="200">Sophomore (200)</option>
+                        <option value="300">Junior (300)</option>
+                        <option value="400">Senior (400)</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="profile-buttons">
+                <button type="submit" id="saveProfileButton" hidden>
+                    Save Changes
+                </button>
+                <button type="button" id="cancelProfileButton" hidden>
+                    Cancel
+                </button>
+            </div>
+
+            <p id="profileMessage" class="profile-message" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+
+        <section class="panel scan-panel" id="scan">
+            <div>
+                <p class="eyebrow">SMART ATTENDANCE</p>
+                <h2>Ready to mark your attendance?</h2>
+                <p>Scan your lecturer's class QR code when the attendance session is open.</p>
+            </div>
+            <button type="button" id="scanButton">Scan QR Code ↗</button>
+            <p id="scanMessage" class="scan-message" aria-live="polite"></p>
+            
+            <div id="qr-reader">
+
+            </div>
+          
+
+
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 SmartAttend. All rights reserved.</p>
+            <p>Smarter Attendance. Brighter Future.</p>
+        </footer>
+    </main>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="student dashboard.js"></script>
+    <script src="profile.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="dashboard-avatar.js"></script>
+
+</body>
+</html>

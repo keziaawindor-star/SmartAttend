@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SmartAttend</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="admin-dashboard.html" class="brand">SmartAttend</a>
+        <p class="portal-label">ADMINISTRATOR's PORTAL</p>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active">Dashboard</a>
+            <a href="#students" class="nav-link">Students</a>
+            <a href="#lecturers" class="nav-link">Lecturers</a>
+            <a href="#courses" class="nav-link">Courses</a>
+            <a href="#attendance" class="nav-link">Attendance</a>
+            <a href="#reports" class="nav-link">Reports</a>
+            <a href="#profile" class="nav-link">My Profile</a>
+        </nav>
+
+        <button id="adminLogout" class="logout-btn">Log Out</button>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+
+        <header class="topbar">
+            <div>
+                <p class="topbar-label">ADMINISTRATOR</p>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="admin-badge">
+                <div class="avatar">A</div>
+                <div>
+                    <strong id="adminName">Administrator</strong>
+                    <p>System Admin</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome-section">
+            <h2 id="adminWelcome">Welcome back! 👋</h2>
+            <p>Manage SmartAttend and monitor your institution's attendance activities.</p>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon">🎓</div>
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+                <span>Registered student accounts</span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon">👨‍🏫</div>
+                <p>Total Lecturers</p>
+                <h2 id="totalLecturers">0</h2>
+                <span>Registered lecturer accounts</span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon">📚</div>
+                <p>Total Courses</p>
+                <h2 id="totalCourses">0</h2>
+                <span>Courses in the system</span>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon">📊</div>
+                <p>Attendance Records</p>
+                <h2 id="totalAttendance">0</h2>
+                <span>Recorded attendance entries</span>
+            </article>
+        </section>
+
+        <section class="content-card" id="students">
+            <div class="section-heading">
+                <div>
+                    <h2>Student Management</h2>
+                    <p>View student registration information.</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Email Address</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable">
+                        <tr>
+                            <td colspan="3">No student records loaded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-card" id="lecturers">
+            <div class="section-heading">
+                <div>
+                    <h2>Lecturer Management</h2>
+                    <p>View lecturer registration information.</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lecturer Name</th>
+                            <th>Email Address</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lecturersTable">
+                        <tr>
+                            <td colspan="3">No lecturer records loaded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="management-grid">
+            <article class="content-card" id="courses">
+                <h2>Course Management</h2>
+                <p>Course information and management tools will appear here as we connect your existing course data.</p>
+            </article>
+
+            <article class="content-card" id="attendance">
+                <h2>Attendance Monitoring</h2>
+                <p>Attendance summaries and monitoring tools will appear here when attendance data is connected.</p>
+            </article>
+        </section>
+
+        <section class="content-card" id="reports">
+            <h2>Reports</h2>
+            <p>Attendance reports and system summaries will be added here.</p>
+        </section>
+
+        <section class="content-card" id="profile">
+            <h2>My Profile</h2>
+            <p><strong>Administrator ID:</strong> <span id="adminId">—</span></p>
+            <p><strong>Email:</strong> <span id="adminEmail">—</span></p>
+        </section>
+
+        <footer>
+            © 2026 SmartAttend. All rights reserved.
+        </footer>
+
+    </main>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

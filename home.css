@@ -1,0 +1,648 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 10px 20px;
+    background-color: #0d2646;
+}
+
+/* Logo */
+.logo img {
+    width: 120px;
+    height: 115px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 50px;
+}
+
+/* Individual links */
+.nav-links a {
+    text-decoration: none;
+    color: #e3e6ea;
+    font-size: 19px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: #367070;
+}
+
+
+/* Dashboard background and spacing */
+.dashboard {
+    padding: 30px;
+    background-color: #1a365e;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard h1 {
+    color: #d5d9e5;
+    margin-bottom: 8px;
+}
+
+.dashboard > p {
+    color: #cfd8e5;
+    margin-bottom: 25px;
+}
+
+/* Arrange cards side by side */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Common card design */
+.card {
+    background-color: rgb(69, 83, 133);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 16px;
+    color: #d3e0f4;
+}
+
+.card h2 {
+    font-size: 32px;
+    color: #bbcbec;
+    margin: 15px 0;
+}
+
+.card p {
+    color: #a4afbf;
+    font-size: 14px;
+}
+
+/* Different accent colours */
+.students-card {
+    border-top: 4px solid #3b82f6;
+}
+
+.attendance-card {
+    border-top: 4px solid #14b8a6;
+}
+
+.qr-card {
+    border-top: 4px solid #8b5cf6;
+}
+
+/* QR button */
+.qr-card button {
+    background-color: #101c35;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.qr-card button:hover {
+    background-color: #2563eb;
+}
+
+/* Responsive design for phones */
+@media (max-width: 800px) {
+    .cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard {
+        padding: 18px;
+    }
+}
+
+/* FEATURES SECTION */
+.features-section {
+    padding: 55px 30px;
+    background: #33445a;
+    font-family: Arial, sans-serif;
+}
+
+.features-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.section-label {
+    color: #0d9488;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.features-heading h2 {
+    color: #edeff3;
+    font-size: clamp(24px, 4vw, 34px);
+    margin: 12px 0;
+}
+
+.features-heading p {
+    color: #b0bbca;
+    line-height: 1.7;
+}
+
+/* MAIN FEATURE SHOWCASE */
+.feature-showcase {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 35px 25px;
+    background: white;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(16, 28, 53, 0.07);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.4s ease;
+}
+    
+    .feature-showcase.changing{
+    transform: translateX(-45px);
+}
+
+.feature-showcase.slide-in {
+    animation: slideIn 0.45s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(45px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.feature-tag {
+    display: inline-block;
+    background: #ccfbf1;
+    color: #0f766e;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.feature-showcase h3 {
+    color: #101c35;
+    font-size: 25px;
+    margin: 18px 0 10px;
+}
+
+.feature-showcase > p {
+    color: #64748b;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* PREVIOUS AND NEXT BUTTONS */
+.feature-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.feature-controls > button {
+    background: #101c35;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 15px;
+    cursor: pointer;
+}
+
+.feature-controls > button:hover {
+    background: #0d9488;
+}
+
+/* FEATURE INDICATORS */
+.feature-dots {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+}
+
+.feature-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    background: #cbd5e1;
+    cursor: pointer;
+}
+
+.feature-dot.active {
+    width: 23px;
+    background: #0d9488;
+}
+
+/* BENEFIT CARDS */
+.feature-benefits {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(16, 28, 53, 0.08);
+}
+
+.benefit-card span {
+    font-size: 30px;
+}
+
+.benefit-card h3 {
+    color: #101c35;
+    font-size: 17px;
+}
+
+.benefit-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 650px) {
+    .features-section {
+        padding: 40px 16px;
+    }
+
+    .feature-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-showcase {
+        padding: 28px 18px;
+    }
+
+    .feature-controls > button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-showcase,
+    .benefit-card {
+        transition: none;
+    }
+}
+
+/* HOW SMARTATTEND WORKS */
+.how-it-works {
+    padding: 70px 30px;
+    background: #bd9c9c;
+    font-family: Arial, sans-serif;
+}
+
+.how-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+/* SmartAttend colours in the How It Works heading */
+
+.how-heading h2 .smart-text {
+    color:#101c35;
+}
+
+.how-heading h2 .attend-text {
+    color:#0d9488;
+}
+
+.how-heading h2 {
+    color: #101c35;
+    font-size: clamp(26px, 4vw, 36px);
+    margin: 12px 0;
+}
+
+.how-heading p {
+    color: #23416c;
+    line-height: 1.7;
+}
+
+.steps-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.step-card {
+    position: relative;
+    padding: 35px 25px;
+    background: #f3f6fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    text-align: center;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(16, 28, 53, 0.1);
+}
+
+.step-number {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    color: #091a18;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin: 10px auto 22px;
+    background: #ccfbf1;
+    color: #0d9488;
+    border-radius: 20px;
+    font-size: 36px;
+}
+
+.step-card h3 {
+    color: #101c35;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    color: #657a97;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.steps-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 800px;
+    margin: 35px auto 0;
+    padding: 18px 22px;
+    background: #adcdbe;
+    border-radius: 12px;
+    color: #115e59;
+}
+
+.steps-note span {
+    font-size: 24px;
+}
+
+.steps-note p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+@media (max-width: 750px) {
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .how-it-works {
+        padding: 45px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .step-card {
+        transition: none;
+    }
+}
+
+/* FOOTER */
+.site-footer {
+    background: #101c35;
+    color: #ffffff;
+    padding: 50px 30px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 200;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-brand h2 {
+    margin: 0 0 12px;
+    font-size: 27px;
+}
+
+/* SmartAttend footer logo */
+.footer-brand h2 .smart-text {
+    color: #6b72bd;
+    transition: color 0.3s ease;
+}
+
+.footer-brand h2 .attend-text {
+    color: #5ed0b5;
+    transition: color 0.3s ease;
+}
+
+
+.footer-brand p,
+.footer-bottom p {
+    color: #a3b0c0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-links h3,
+.footer-account h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.footer-links a,
+.footer-account a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 12px;
+    color: #a4b0c0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-account a:hover {
+    color: #2dd4bf;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 650px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-links a,
+    .footer-account a {
+        transition: none;
+    }
+}
+
+#featureShowcase {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#featureShowcase.feature-changing {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+/* Full-width SmartAttend footer */
+.site-footer {
+    width: 100%;
+    margin: 0;
+    padding: 55px 6% 0;
+    box-sizing: border-box;
+    background: #101c35;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.footer-bottom {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive footer layout */
+@media (max-width: 700px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
